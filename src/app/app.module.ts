@@ -7,6 +7,9 @@ import { MoviesInCategoryComponent } from './pages/categories/movies-in-category
 import { MoviesComponent } from './pages/movies/movies.component';
 import { MovieDetailsComponent } from './pages/movies/movie-details/movie-details.component';
 import { MovieCoverComponent } from './shared/movie-cover/movie-cover.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './pages/app-routing-module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import { MovieCoverComponent } from './shared/movie-cover/movie-cover.component'
     MoviesInCategoryComponent,
     MoviesComponent,
     MovieDetailsComponent,
-    MovieCoverComponent
+    MovieCoverComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
