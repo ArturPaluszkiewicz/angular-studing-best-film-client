@@ -10,6 +10,8 @@ import { MovieCoverComponent } from './shared/movie-cover/movie-cover.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './pages/app-routing-module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { YearsComponent } from './pages/years/years.component';
+import { MovieInYearsComponent } from './pages/years/movie-in-years/movie-in-years.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     MoviesComponent,
     MovieDetailsComponent,
     MovieCoverComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    YearsComponent,
+    MovieInYearsComponent
   ],
   imports: [
     BrowserModule,

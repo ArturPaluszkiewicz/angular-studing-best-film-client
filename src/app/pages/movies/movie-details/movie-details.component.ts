@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { HttpService } from 'src/app/services/http.sevice.service';
 import { Movie } from 'src/models/movie';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-movie-details',
@@ -15,7 +16,7 @@ export class MovieDetailsComponent implements OnInit{
   constructor(
     private http: HttpService,
      private route: ActivatedRoute,
-     private router: Router
+     private location: Location
      ){}
 
   ngOnInit(){
@@ -24,6 +25,6 @@ export class MovieDetailsComponent implements OnInit{
       )
   }
   goToMovies(){
-    this.router.navigate(['/movies'])
+    this.location.back();
   }
 }
