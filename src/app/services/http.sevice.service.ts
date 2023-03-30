@@ -34,7 +34,7 @@ export class HttpService {
   }
 
   // Wykorzystaj do zrobienia zadania
-  getMoviesFromYear(year: string): Observable<Movie[]> {
+  getMoviesFromYear(year: string|null): Observable<Movie[]> {
     return this.getMovies().pipe(
       map(movies => movies.filter(movie => movie.year === year))
     );
