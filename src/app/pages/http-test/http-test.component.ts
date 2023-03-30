@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpMoviesService } from 'src/app/services/http-movies.service';
+import { Movie } from 'src/models/movie';
 
 @Component({
   selector: 'app-http-test',
@@ -6,15 +8,50 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./http-test.component.css'],
 })
 export class HttpTestComponent {
-  constructor() {}
+  constructor(private http: HttpMoviesService) {}
 
-  get() {}
+  get() {
+    this.http.getMovies().subscribe();
+  }
 
-  post() {}
+  post() {
+    const movie: Movie = {
+      country: 'Poland',
+      director: 'Marek Costam',
+      category: 'Fantasy',
+      plot: 'Zabojca potworow Geralt',
+      poster: null,
+      year: '2001',
+      title: 'Wiedzmin',
+      imdbRating: '1.0'
+    };
+    this.http.postMovies(movie).subscribe();
+  }
 
-  put() {}
+  put() {
+    const movie: Movie = {
+      id: '54',
+      country: 'Poland',
+      director: 'Marek Costam',
+      category: 'Fantasy',
+      plot: 'Zabojca potworow Geralt',
+      poster: null,
+      year: '2001',
+      title: 'Wiedzmin 2',
+      imdbRating: '1.0'
+    };
+    this.http.putMovies(movie).subscribe();
+  }
 
-  patch() {}
+  patch() {
+    const movie: Partial<Movie> = {
+      id: '54',
+      plot: 'Geralt szuka Ciri',
+    }
+    this.http.patchMovie(movie).subscribe();
+  }
 
-  delete() {}
+  delete() {
+    this.http.deleteMovie('54').subscribe();
+  }
 }
