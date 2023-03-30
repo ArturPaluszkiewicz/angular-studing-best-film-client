@@ -13,6 +13,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { YearsComponent } from './pages/years/years.component';
 import { MovieInYearsComponent } from './pages/years/movie-in-years/movie-in-years.component';
 import { HttpTestComponent } from './pages/http-test/http-test.component';
+import { AddMovieComponent } from './pages/add-movie/add-movie.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { HttpTestComponent } from './pages/http-test/http-test.component';
     PageNotFoundComponent,
     YearsComponent,
     MovieInYearsComponent,
-    HttpTestComponent
+    HttpTestComponent,
+    AddMovieComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
