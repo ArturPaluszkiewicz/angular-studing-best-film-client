@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 import { HttpService } from 'src/app/services/http.sevice.service';
 import { Movie } from 'src/models/movie';
 
@@ -8,11 +9,16 @@ import { Movie } from 'src/models/movie';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent {
+export class MovieDetailsComponent implements OnInit{
   movieDetails?: Observable<Movie>;
 
-  constructor(private http: HttpService){}
+  constructor(private http: HttpService, private route: ActivatedRoute){}
 
+  ngOnInit(){
+      this.movieDetails = this.route.paramMap.pipe(
+        switchMap((params: ParamMap) => this.http.getMovie(params.get('id')))
+      )
+  }
   goToMovies(){
  
   }

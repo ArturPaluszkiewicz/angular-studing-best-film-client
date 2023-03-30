@@ -14,7 +14,7 @@ export class HttpService {
     return this.httpClient.get<Movie[]>('http://localhost:3000/movies');
   }
 
-  getMovie(id: string): Observable<Movie> {
+  getMovie(id: string|null): Observable<Movie> {
     return this.httpClient.get<Movie>('http://localhost:3000/movies/' + id);
   }
 
