@@ -12,6 +12,7 @@ import { AppRoutingModule } from './pages/app-routing-module';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { YearsComponent } from './pages/years/years.component';
 import { MovieInYearsComponent } from './pages/years/movie-in-years/movie-in-years.component';
+import { HttpTestComponent } from './pages/http-test/http-test.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MovieInYearsComponent } from './pages/years/movie-in-years/movie-in-yea
     MovieCoverComponent,
     PageNotFoundComponent,
     YearsComponent,
-    MovieInYearsComponent
+    MovieInYearsComponent,
+    HttpTestComponent
   ],
   imports: [
     BrowserModule,
