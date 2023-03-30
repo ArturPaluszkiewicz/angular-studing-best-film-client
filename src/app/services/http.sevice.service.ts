@@ -22,7 +22,7 @@ export class HttpService {
     return this.httpClient.get<string[]>('http://localhost:3000/categories');
   }
 
-  getMoviesFromCategory(category: string): Observable<Movie[]> {
+  getMoviesFromCategory(category: string|null): Observable<Movie[]> {
     return this.getMovies().pipe(
       map(movies => movies.filter(movie => movie.category === category))
     );
