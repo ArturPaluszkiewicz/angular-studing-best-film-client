@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { HttpMoviesService } from 'src/app/services/http-movies.service';
 import { HttpService } from 'src/app/services/http.sevice.service';
 import { Movie } from 'src/models/movie';
